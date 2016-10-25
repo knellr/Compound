@@ -1,0 +1,35 @@
+# Xcode
+Pods
+build
+.DS_Store
+*.pbxuser
+!default.pbxuser
+*.mode1v3
+!default.mode1v3
+*.mode2v3
+!default.mode2v3
+*.perspectivev3
+!default.perspectivev3
+*.xcworkspace
+!default.xcworkspace
+xcuserdata
+profile
+.idea/
+
+*.orig
+help/
+*.BACKUP.*
+*.LOCAL.*
+*.REMOTE.*
+*.BASE.*
+*_BACKUP_*
+*_LOCAL_*
+*_REMOTE_*
+*_BASE_*
+
+# Bundler
+.bundle
+
+# Code Coverage
+*.gcno
+*.gcda

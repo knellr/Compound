@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11521.1" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11517.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Interest View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="InterestViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Compound Interest Calculator" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IdX-Ee-3I7">
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="22"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Deposit Amount (£)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f1n-WU-thI">
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Interest Rate (%)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F7y-qL-a8J">
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="0" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dY3-Tx-U1S" customClass="DecimalTextField">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="125" id="udY-y3-S1j"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="0" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nJo-tZ-ePF" customClass="DecimalTextField">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="125" id="uQv-3n-SJh"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7cx-YR-U4T">
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="30"/>
+                                <state key="normal" title="Calculate">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="calculateButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Qdg-9s-WKc"/>
+                                </connections>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="kZz-qZ-F7e">
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Interest" id="Dt8-Ip-RUj" customClass="InterestTableViewCell">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Dt8-Ip-RUj" id="pIG-iF-bb6">
+                                            <frame key="frameInset" width="375" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="After X years" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u48-rz-8Ip">
+                                                    <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
+                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalCompressionResistancePriority="751" text="£ amount" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hSQ-lZ-27h">
+                                                    <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
+                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="hSQ-lZ-27h" firstAttribute="leading" secondItem="u48-rz-8Ip" secondAttribute="trailing" constant="8" id="AdX-P9-AmS"/>
+                                                <constraint firstItem="u48-rz-8Ip" firstAttribute="centerY" secondItem="pIG-iF-bb6" secondAttribute="centerY" id="Afo-ef-mKx"/>
+                                                <constraint firstItem="u48-rz-8Ip" firstAttribute="leading" secondItem="pIG-iF-bb6" secondAttribute="leading" constant="20" id="sSr-jT-2Wc"/>
+                                                <constraint firstAttribute="trailing" secondItem="hSQ-lZ-27h" secondAttribute="trailing" constant="20" id="tYo-TY-bvv"/>
+                                                <constraint firstItem="hSQ-lZ-27h" firstAttribute="centerY" secondItem="pIG-iF-bb6" secondAttribute="centerY" id="uNx-eL-RPn"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.0" green="0.64313725489999995" blue="0.91372549020000005" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <outlet property="amountLabel" destination="hSQ-lZ-27h" id="Gph-eG-yB4"/>
+                                            <outlet property="yearsLabel" destination="u48-rz-8Ip" id="IIk-fw-EfA"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.64313725490196072" blue="0.9137254901960784" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="F7y-qL-a8J" firstAttribute="top" secondItem="f1n-WU-thI" secondAttribute="bottom" constant="16" id="DbU-iV-9ef"/>
+                            <constraint firstItem="dY3-Tx-U1S" firstAttribute="centerY" secondItem="f1n-WU-thI" secondAttribute="centerY" id="GIt-Tn-1Q2"/>
+                            <constraint firstItem="7cx-YR-U4T" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="LAL-QT-znt"/>
+                            <constraint firstItem="IdX-Ee-3I7" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="UK0-OF-rvu"/>
+                            <constraint firstItem="f1n-WU-thI" firstAttribute="leading" secondItem="IdX-Ee-3I7" secondAttribute="leading" id="eKB-5m-dAg"/>
+                            <constraint firstItem="kZz-qZ-F7e" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="f0a-Qw-CBc"/>
+                            <constraint firstItem="7cx-YR-U4T" firstAttribute="top" secondItem="F7y-qL-a8J" secondAttribute="bottom" constant="8" id="hWi-uU-hZ1"/>
+                            <constraint firstItem="nJo-tZ-ePF" firstAttribute="centerY" secondItem="F7y-qL-a8J" secondAttribute="centerY" id="p5T-j3-2u5"/>
+                            <constraint firstItem="nJo-tZ-ePF" firstAttribute="trailing" secondItem="dY3-Tx-U1S" secondAttribute="trailing" id="pKg-kX-qzp"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="kZz-qZ-F7e" secondAttribute="bottom" id="py1-8o-G2E"/>
+                            <constraint firstItem="IdX-Ee-3I7" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="tcw-LF-vth"/>
+                            <constraint firstItem="f1n-WU-thI" firstAttribute="top" secondItem="IdX-Ee-3I7" secondAttribute="bottom" constant="16" id="wGL-aG-BaY"/>
+                            <constraint firstItem="kZz-qZ-F7e" firstAttribute="top" secondItem="7cx-YR-U4T" secondAttribute="bottom" constant="8" id="xTl-qG-seB"/>
+                            <constraint firstAttribute="trailing" secondItem="kZz-qZ-F7e" secondAttribute="trailing" id="yI5-lS-SIJ"/>
+                            <constraint firstItem="F7y-qL-a8J" firstAttribute="leading" secondItem="f1n-WU-thI" secondAttribute="leading" id="yjf-54-l3h"/>
+                            <constraint firstItem="dY3-Tx-U1S" firstAttribute="trailing" secondItem="IdX-Ee-3I7" secondAttribute="trailing" id="zFu-F5-Bkm"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="depositTextField" destination="dY3-Tx-U1S" id="CiD-A2-Ijw"/>
+                        <outlet property="interestTextField" destination="nJo-tZ-ePF" id="ILn-fv-4wS"/>
+                        <outlet property="tableView" destination="kZz-qZ-F7e" id="ggq-3k-2uD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="52" y="107.49625187406298"/>
+        </scene>
+    </scenes>
+</document>
